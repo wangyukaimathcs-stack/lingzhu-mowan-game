@@ -36,7 +36,7 @@
   }
   function start(i){level=i;reset();mode='play';menu.classList.add('hidden');play.classList.remove('hidden');win.classList.add('hidden');document.getElementById('level-title').textContent=`第 ${i+1} 关 · ${data[i].name}`;document.getElementById('hint').textContent=data[i].hint;last=performance.now();cancelAnimationFrame(raf);raf=requestAnimationFrame(loop)}
   function groundAt(x,d){return !(d.pit&&x>d.pit.x&&x<d.pit.x+d.pit.w)}
-  function platforms(d){let a=[...d.platforms.map(p=>({...p}))];if(d.lift)a.push({x:d.lift.x,y:world.liftY,w:d.lift.w,lift:true});if(d.moving&&world.syncOn)a.push({x:world.movingX,y:d.moving.y,w:d.moving.w,moving:true});return a}
+  function platforms(d){let a=[...(d.platforms||[]).map(p=>({...p}))];if(d.lift)a.push({x:d.lift.x,y:world.liftY,w:d.lift.w,lift:true});if(d.moving&&world.syncOn)a.push({x:world.movingX,y:d.moving.y,w:d.moving.w,moving:true});return a}
   function update(dt){
     const d=data[level];world.clock+=dt;world.timer=Math.max(0,world.timer-dt);
     if(d.lift){let target=world.flags.lift?d.lift.target:d.lift.y;world.liftY+=(target-world.liftY)*Math.min(1,dt*2.4)}
