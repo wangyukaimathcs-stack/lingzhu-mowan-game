@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10182b">
+  <title>灵珠与魔丸 · 双人闯关</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>灵珠与魔丸 <small>双人闯关</small></span></div>
+      <div class="controls"><span><kbd>A</kbd><kbd>D</kbd><kbd>W</kbd> 灵珠崇乐</span><i></i><span>魔丸祥宏 <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd></span></div>
+    </header>
+    <section id="menu" class="menu">
+      <div class="menu-head">
+        <div class="eyebrow">TWO PLAYERS · ONE KEYBOARD</div>
+        <h1>一起闯过<br><em>三重机关</em></h1>
+        <p>两人各自到达出口，才能一起通关。</p>
+      </div>
+      <div class="portrait-pair">
+        <div class="portrait blue"><img src="blue.jpg" alt="灵珠崇乐头像"><div><b>灵珠崇乐</b><small>W A D</small></div></div>
+        <div class="portrait red"><img src="red.png" alt="魔丸祥宏头像"><div><b>魔丸祥宏</b><small>↑ ← →</small></div></div>
+      </div>
+      <div id="levels" class="level-list"></div>
+    </section>
+    <section id="play" class="play hidden" aria-label="游戏画面">
+      <div class="gamebar"><button id="back" class="text-button">← 选关</button><span id="level-title"></span><button id="restart" class="text-button">↻ 重开本关</button></div>
+      <div class="canvas-wrap"><canvas id="game" width="1200" height="680" aria-label="双人闯关游戏"></canvas></div>
+      <div class="gamefoot"><div><img src="blue.jpg" alt=""><span>灵珠崇乐 <small>W 跳 · A / D 移动</small></span></div><p id="hint"></p><div><span>魔丸祥宏 <small>↑ 跳 · ← / → 移动</small></span><img src="red.png" alt=""></div></div>
+    </section>
+    <div id="win" class="overlay hidden"><div class="win-card"><div class="eyebrow">LEVEL COMPLETE</div><h2>通关！</h2><p>灵珠与魔丸都抵达了出口。</p><div><button id="win-menu" class="button secondary">返回选关</button><button id="win-next" class="button">下一关 →</button></div></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
+
